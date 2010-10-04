@@ -53,7 +53,7 @@ xml.div(:id=>'event-index',:class=>'section') do
             xml.ul(:class=>'speakers') do
               event.persons.each do | person |
                 xml.li do
-                  xml.a(person.name,{:href=>url_for(:conference_id=>@conference.conference_id,:action=>:speaker,:language=>params[:language],:id=>person.person_id)})
+                  xml.a("#{person.name} (#{person.event_role_name})",{:href=>url_for(:conference_id=>@conference.conference_id,:action=>:speaker,:language=>params[:language],:id=>person.person_id)})
                 end
               end
             end

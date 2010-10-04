@@ -11,7 +11,7 @@ xml.div(:id=>'infobox') do
           end
         end
         xml.td do
-          xml.a(person.name,{:href=>url_for(:conference_id=>@conference.conference_id,:action=>:speaker,:language=>params[:language],:id=>person.person_id)})
+          xml.a("#{person.name} (#{person.event_role_name})",{:href=>url_for(:conference_id=>@conference.conference_id,:action=>:speaker,:language=>params[:language],:id=>person.person_id)})
         end
       end
     end

@@ -39,7 +39,7 @@ xml.schedule do
               xml.description event.description
               xml.persons do
                 event.persons.each do | speaker |
-                  xml.person( speaker.name, {:id=>speaker.person_id} )
+                  xml.person( speaker.name, {:id=>speaker.person_id,:role=>speaker.event_role} )
                 end
               end
               xml.links do
